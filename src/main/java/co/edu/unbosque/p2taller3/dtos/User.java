@@ -4,13 +4,13 @@ import com.opencsv.bean.CsvBindByName;
 
 public class User {
 
-    @CsvBindByName
+    @CsvBindByName(column = "username")
     private String username;
 
-    @CsvBindByName
+    @CsvBindByName(column = "password")
     private String password;
 
-    @CsvBindByName
+    @CsvBindByName(column = "role")
     private String role;
 
     public User(String username, String password, String role) {
@@ -41,5 +41,10 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "username='" + username + '\'' + ", password='" + password + '\'' + ", role='" + role + '\'' + '}';
     }
 }
