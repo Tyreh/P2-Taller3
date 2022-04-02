@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserService {
-    public static Optional<List<User>> readUserCsv() {
+    public Optional<List<User>> readUserCsv() {
         try {
             List<User> userList = new ArrayList<>();
 
@@ -40,7 +40,7 @@ public class UserService {
         }
     }
 
-    public static void writeUserCsv(String[] data) throws URISyntaxException {
+    public void writeUserCsv(String[] data) throws URISyntaxException {
         File file = new File(String.valueOf(Paths.get(ClassLoader.getSystemResource("users.csv").toURI())));
         try {
             FileWriter outPutFile = new FileWriter(file, true);
