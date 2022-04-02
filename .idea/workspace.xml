@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="P2-Taller3:war exploded" />
-    </artifacts-to-build>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6f6a4fa-4f03-4927-8901-592d78157ecd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/classes/users.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P2-Taller3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/P2-Taller3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/p2taller3/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/p2taller3/HelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/p2taller3/dtos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/p2taller3/dtos/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/p2taller3/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/p2taller3/services/UserService.java" afterDir="false" />
+    <list default="true" id="66901fbb-4951-4364-bdb5-31cb571ff10e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/p2taller3/dtos/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/p2taller3/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/p2taller3/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/p2taller3/dtos/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/p2taller3/services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/lib/commons-beanutils-1.9.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/lib/commons-collections-3.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/lib/commons-collections4-4.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/lib/commons-lang3-3.12.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/lib/commons-text-1.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/P2-Taller3-1.0-SNAPSHOT/WEB-INF/lib/opencsv-5.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/p2taller3/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/p2taller3/dtos/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/p2taller3/services/UserService.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="26yYJlTRvqPQCnmrAOp0pXA35Oe" />
+  <component name="ProjectId" id="27GAQmQTISivKlvFLolsruwpQGw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,23 +50,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="G:/Mi unidad/Programación Drive/Universidad/3 semestre/PROGRAMACION2/WEB/MercadoLibreEjemplo" />
+    <property name="last_opened_file_path" value="G:/Mi unidad/Programación Drive/Universidad/3 semestre/PROGRAMACION2/ServletJSPTutorial" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\oscar\Desktop\P2-Taller3\src\main\webapp\css" />
-      <recent name="C:\Users\oscar\Desktop\P2-Taller3\src\main\webapp" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 26.1.0.Beta1">
+  <component name="RunManager" selected="Application.UserService">
     <configuration name="UserService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="co.edu.unbosque.p2taller3.services.UserService" />
       <module name="P2-Taller3" />
@@ -97,21 +87,6 @@
         <option name="CREDENTIAL_ALIAS" />
       </server-settings>
       <predefined_log_file enabled="true" id="JBoss" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -128,13 +103,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f6f6a4fa-4f03-4927-8901-592d78157ecd" name="Changes" comment="" />
-      <created>1648397234518</created>
+      <changelist id="66901fbb-4951-4364-bdb5-31cb571ff10e" name="Changes" comment="" />
+      <created>1648936035068</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1648397234518</updated>
-      <workItem from="1648397238768" duration="3473000" />
-      <workItem from="1648417623284" duration="5392000" />
+      <updated>1648936035068</updated>
+      <workItem from="1648936036658" duration="3454000" />
     </task>
     <servers />
   </component>
