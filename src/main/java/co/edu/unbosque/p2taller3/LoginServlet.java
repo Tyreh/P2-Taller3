@@ -1,20 +1,30 @@
 package co.edu.unbosque.p2taller3;
 
 import java.io.*;
+import java.util.List;
 
+import co.edu.unbosque.p2taller3.dtos.User;
+import co.edu.unbosque.p2taller3.services.UserService;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "login", value = "/login")
+public class LoginServlet extends HttpServlet {
     private String message;
 
     public void init() {
         message = "Hello World!";
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String role = request.getParameter("role");
+        List<User> userList = new UserService().readUserCsv().get();
+        User userFound = userList.stream().filter(user -> username.equals(user.getUsername()) && password.equals(user.getPassword())).findFirst().get();
 
         // Hello
         PrintWriter out = response.getWriter();
