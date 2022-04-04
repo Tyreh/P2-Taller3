@@ -1,7 +1,7 @@
 package co.edu.unbosque.p2taller3;
 
 import co.edu.unbosque.p2taller3.dtos.NFT;
-import co.edu.unbosque.p2taller3.services.NFTController;
+import co.edu.unbosque.p2taller3.services.NftService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
@@ -19,8 +19,8 @@ import java.nio.file.Paths;
 @MultipartConfig
 public class ImageServlet extends HttpServlet {
 
-    private NFTController nftc = new NFTController();
-    private String pathFiles = "C:\\Users\\Nicolàs\\IdeaProjects\\P2-Taller3\\src\\main\\resources\\nftfiles\\";
+    private NftService nftc = new NftService();
+    private String pathFiles = "src/main/resources/nftfiles";
     private File uploads = new File(pathFiles);
     private String extens[] = {".jpg", ".png", ".gif", "jpeg"};
 
@@ -41,22 +41,23 @@ public class ImageServlet extends HttpServlet {
             String title = req.getParameter("title");
             String fcoins  = req.getParameter("fcoins");
             Part part = req.getPart("file");
+            String partConverted = part.toString();
 
             if(part == null){
-                System.out.println("No ha selccionado un archivo");
+                System.out.println("No ha seleccionado un archivo");
                 return;
             }
 
             if(isExtension(part.getSubmittedFileName(), extens)){
                 String photo = saveFile(part, uploads);
-                NFT nft = new NFT(title, fcoins);
+                NFT nft = new NFT(title, fcoins, partConverted);
                 //funcion agregar nft
             }
 
         } catch (Exception e){
             e.printStackTrace();
         }
-        res.sendRedirect("/createNFT.html");
+        res.sendRedirect("createNFT.html");
     }
 
 
