@@ -42,27 +42,22 @@
         <h1>Crear nuevo NFT</h1>
         <!-- Nft title information -->
         <div class="grupo">
-            <input type="text" name="" id="text" required><span class="barra"></span>
+            <input type="text" name="" id="text" action="title" required><span class="barra"></span>
             <label>Titulo del NFT</label>
         </div>
         <!-- Author input div -->
         <div class="grupo">
-            <input type="text" name="" id="text" required><span class="barra"></span>
+            <input type="text" name="" id="text" action="autor" required><span class="barra"></span>
             <label>Autor</label>
         </div>
         <!-- Image input div -->
         <div class="grupo">
-            <input type="url" name="url" id="url" required><span class="barra"></span>
+            <input type="file" name="file" id="url" required><span class="barra"></span>
             <label for="url">Imagen (https://URL)</label>
-        </div>
-        <!-- Description div with label -->
-        <div class="grupo">
-            <input type="text" name="" id="text" required><span class="barra"></span>
-            <label>Descripcion</label>
         </div>
         <!-- Final price div with label -->
         <div class="grupo">
-            <input type="text" name="" id="text" required><span class="barra"></span>
+            <input type="text" name="" id="text" action="fcoins" required><span class="barra"></span>
             <label>Precio inicial</label>
         </div>
         <!-- Create button  -->
