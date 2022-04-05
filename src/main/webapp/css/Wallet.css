@@ -138,7 +138,7 @@ button {
     height: 50px;
     width: 50px;
     position: relative;
-    left: 200px;
+    left: 20px;
 }
 
 /*style the entire header*/
@@ -174,15 +174,16 @@ button {
     font-family: "Montserrat", sans-serif;
     padding: 0 40px;
     line-height: 80px;
+    margin-left: -1600px;
 }
 
 /*shapes the user logo*/
 .nav-avatar {
-    margin-top: 10px;
+    margin-top: 15px;
     height: 30px;
     width: 30px;
     position: relative;
-    left: 820px;
+    left: 415px;
     top: 10px;
 }
 

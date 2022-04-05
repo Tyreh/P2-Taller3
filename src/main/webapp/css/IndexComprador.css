@@ -7,6 +7,7 @@ Gives style to all css document
     margin: 0;
     *box-sizing: border-box;
     *flex-wrap: wrap;
+
 }
 
 /**
@@ -14,7 +15,7 @@ Gives style to all html body
 */
 body {
     font-family: sans-serif;
-    padding: 94px 0px 0px;
+    padding: 90px 0px 0;
     background: #222228;
 }
 
@@ -26,7 +27,7 @@ Logo image in the navbar
     height: 50px;
     width: 50px;
     position: relative;
-    left: 130px;
+    left: 100px;
 }
 
 /**
@@ -48,7 +49,7 @@ Gives style to all nav label
 .nav {
     padding: 5px;
     display: flex;
-    max-width: 1200px;
+    max-width: 1300px;
     justify-content: space-between;
     margin: 0 auto;
 }
@@ -71,7 +72,19 @@ Logo text next to the logo image
     padding: 0 40px;
     line-height: 80px;
     position: relative;
-    left: -170px;
+    left: -320px;
+}
+
+/**
+Navbar avatar style
+*/
+.nav-avatar {
+    margin-top: 10px;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    left: 840px;
+    top: 10px;
 }
 
 /**
@@ -139,6 +152,12 @@ Gives style to the text next to the nft image in the index
     color: #7c7c7c;
 }
 
+.p-img-prom1 {
+    font-family: sans-serif Aial;
+    font-size: 25px;
+    color: #97bf3b;
+}
+
 /**
 Gives styles to the image foot behind the index image
 */
@@ -192,7 +211,6 @@ Gives style to the author in the image footer
 /**
 Gives style to the verified badge next to the author
 */
-
 .verified-badge {
     position: relative;
     bottom: 32px;
@@ -207,7 +225,7 @@ gives style to the button explore in the index
 .explore-btn {
     text-decoration: none;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 19px;
     color: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -216,7 +234,6 @@ gives style to the button explore in the index
     border-radius: 10px;
     border: none;
     background-color: #0069f3;
-    margin-left: 75px;
 }
 
 /**
@@ -227,13 +244,40 @@ When the course passes, next to the button the button glows up
     transition: 0.5s;
 }
 
+.logout-btn {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 19px;
+    color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 55px;
+    padding-right: 55px;
+    border-radius: 10px;
+    border: none;
+    background-color: #5427b6;
+    margin-left: 90px;
+}
+
+i{
+    font-size: 22px;
+}
+
+/**
+When the course passes, next to the button the button glows up
+*/
+.logout-btn:hover {
+    background-color: #8a5af3;
+    transition: 0.5s;
+}
+
 /**
 Gives style to the button create in the index
 */
 .create-btn {
     text-decoration: none;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 19px;
     color: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -292,7 +336,7 @@ footer {
     padding-top: 30px;
     color: white;
     position: relative;
-    top: 117px;
+    top: 120px;
 }
 
 /**

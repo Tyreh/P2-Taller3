@@ -225,7 +225,7 @@ gives style to the button explore in the index
 .explore-btn {
     text-decoration: none;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 19px;
     color: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -247,7 +247,7 @@ When the course passes, next to the button the button glows up
 .logout-btn {
     text-decoration: none;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 19px;
     color: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -257,6 +257,10 @@ When the course passes, next to the button the button glows up
     border: none;
     background-color: #5427b6;
     margin-left: 90px;
+}
+
+i{
+    font-size: 22px;
 }
 
 /**
@@ -273,7 +277,7 @@ Gives style to the button create in the index
 .create-btn {
     text-decoration: none;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 19px;
     color: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
