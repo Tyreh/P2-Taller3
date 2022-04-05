@@ -49,6 +49,7 @@ public class NftService {
             FileWriter outputFile = new FileWriter(file, true);
             CSVWriter writer = new CSVWriter(outputFile);
             writer.writeNext(data);
+            System.out.println(Paths.get(ClassLoader.getSystemResource("nft.csv").toURI()));
             writer.close();
         } catch (Exception e) {
             e.printStackTrace();

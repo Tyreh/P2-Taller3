@@ -12,7 +12,7 @@ public class NFT {
     public NFT(String title, String author, String FCoins, String imagePath) {
         this.title = title;
         this.FCoins = FCoins;
-        this.imagePath = imagePath;
+        this.imagePath = null;
         this.author = author;
     }
 

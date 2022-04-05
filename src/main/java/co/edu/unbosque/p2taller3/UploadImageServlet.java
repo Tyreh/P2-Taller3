@@ -16,14 +16,14 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-@WebServlet(name = "UploadNFT", value = "/upload-file")
+@WebServlet(name = "uploadnft", value = "/uploadnft")
 @MultipartConfig(fileSizeThreshold = 720 * 720, maxFileSize = 720 * 720 * 5, maxRequestSize = 720 * 720 * 5 * 5)
 public class UploadImageServlet extends HttpServlet {
     private String UPLOAD_DIRECTORY = "nftfiles";
     private NftService nftService = new NftService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        System.out.println("hola :d");
         String title = req.getParameter("title");
         String author = req.getParameter("author");
         String fCoins = req.getParameter("fcoins");

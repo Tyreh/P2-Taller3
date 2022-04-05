@@ -33,18 +33,18 @@
     </nav>
 </header>
 <!-- Nft main page and main div with information -->
-<form action="" method="POST" id="form">
+<form action="./uploadnft" method="post" id="form">
     <div class="form">
         <!-- Create a new nft title -->
         <h1>Crear nuevo NFT</h1>
         <!-- Nft title information -->
         <div class="grupo">
-            <input type="text" name="" id="text" action="title" required><span class="barra"></span>
+            <input type="text" name="title" action="title" required><span class="barra"></span>
             <label>Titulo del NFT</label>
         </div>
         <!-- Author input div -->
         <div class="grupo">
-            <input type="text" name="" id="text" action="autor" required><span class="barra"></span>
+            <input type="text" name="author" action="autor" required><span class="barra"></span>
             <label>Autor</label>
         </div>
         <!-- Image input div -->
@@ -54,7 +54,7 @@
         </div>
         <!-- Final price div with label -->
         <div class="grupo">
-            <input type="text" name="" id="text" action="fcoins" required><span class="barra"></span>
+            <input type="text" name="fcoins" id="text" action="fcoins" required><span class="barra"></span>
             <label>Precio inicial</label>
         </div>
         <!-- Create button  -->
