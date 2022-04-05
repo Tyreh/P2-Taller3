@@ -5,8 +5,8 @@ Gives style to all css document
 */
 * {
     margin: 0;
-    box-sizing: border-box;
-    flex-wrap: wrap;
+    *box-sizing: border-box;
+    *flex-wrap: wrap;
 
 }
 
@@ -15,7 +15,7 @@ Gives style to all html body
 */
 body {
     font-family: sans-serif;
-    padding: 90px 20px 0;
+    padding: 90px 0px 0;
     background: #222228;
 }
 
@@ -72,7 +72,7 @@ Logo text next to the logo image
     padding: 0 40px;
     line-height: 80px;
     position: relative;
-    left: 20px;
+    left: -120px;
 }
 
 /**
@@ -244,6 +244,29 @@ When the course passes, next to the button the button glows up
     transition: 0.5s;
 }
 
+.logout-btn {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 55px;
+    padding-right: 55px;
+    border-radius: 10px;
+    border: none;
+    background-color: #5427b6;
+    margin-left: 90px;
+}
+
+/**
+When the course passes, next to the button the button glows up
+*/
+.logout-btn:hover {
+    background-color: #8a5af3;
+    transition: 0.5s;
+}
+
 /**
 Gives style to the button create in the index
 */
@@ -306,10 +329,10 @@ footer {
     height: auto;
     width: 100%;
     font-family: "Montserrat";
-    padding-top: 40px;
+    padding-top: 30px;
     color: white;
     position: relative;
-    top: 110px;
+    top: 120px;
 }
 
 /**
@@ -323,6 +346,7 @@ Gives style to the footer content
     text-align: center;
     position: relative;
     bottom: 20px;
+    width: 100%;
 }
 
 /**
@@ -395,8 +419,8 @@ Gives style to the footer bottom
     width: 100vw;
     padding: 20px 0;
     text-align: center;
-    position: relative;
-    right: 20px;
+    position: absolute;
+    *right: 20px;
 }
 
 /**

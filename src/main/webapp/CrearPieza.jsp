@@ -14,8 +14,8 @@
     <!--NavBar declaration and functions-->
     <nav class="nav">
         <!-- Navbar logo and avatar logo --->
-        <img src="/Resources/closedsea%20favicon.png" class="favicon">
-        <img src="/Resources/UserAvatar.png" class="nav-avatar">
+        <img src="./Resources/closedsea%20favicon.png" class="favicon">
+        <img src="./Resources/UserAvatar.png" class="nav-avatar">
         <!-- Navbar text logo --->
         <a href="indexLOG.html" class="logo nav-link">ClosedSea</a>
         <!-- Navbar made with an ordered list and within that list an unordered list --->
@@ -44,6 +44,11 @@
         <div class="grupo">
             <input type="text" name="" id="text" required><span class="barra"></span>
             <label>Titulo del NFT</label>
+        </div>
+        <!-- Author input div -->
+        <div class="grupo">
+            <input type="text" name="" id="text" required><span class="barra"></span>
+            <label>Autor</label>
         </div>
         <!-- Image input div -->
         <div class="grupo">
