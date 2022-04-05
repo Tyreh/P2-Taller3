@@ -5,13 +5,23 @@ import java.util.Objects;
 public class NFT {
 
     private String title;
+    private String author;
     private String FCoins;
     private String imagePath;
 
-    public NFT(String title, String FCoins, String imagePath) {
+    public NFT(String title, String author, String FCoins, String imagePath) {
         this.title = title;
         this.FCoins = FCoins;
         this.imagePath = imagePath;
+        this.author = author;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getTitle() {

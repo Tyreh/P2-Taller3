@@ -27,10 +27,11 @@ public class NftService {
             String[] line;
             while ((line = csvReader.readNext()) != null) {
                 String title = line[0];
-                String fCoins = line[1];
-                String imgPath = line[2];
+                String author = line[1];
+                String fCoins = line[2];
+                String imgPath = line[3];
 
-                NFT nft = new NFT(title, fCoins, imgPath);
+                NFT nft = new NFT(title, author, fCoins, imgPath);
                 nftList.add(nft);
             }
             reader.close();
