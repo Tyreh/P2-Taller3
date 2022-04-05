@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
     flex-wrap: wrap;
@@ -6,7 +6,7 @@
     font-family: 'Nunito', sans-serif;
 }
 
-body{
+body {
     font-family: sans-serif;
     padding: 90px 20px 0;
     background: #222228;
@@ -18,7 +18,7 @@ body{
     align-items: center;
 }
 
-.favicon{
+.favicon {
     margin-top: 10px;
     height: 50px;
     width: 50px;
@@ -26,7 +26,7 @@ body{
     left: -29px;
 }
 
-.header{
+.header {
     background-color: #1c1c1f;
     height: 80px;
     position: fixed;
@@ -37,7 +37,7 @@ body{
 
 }
 
-.nav{
+.nav {
     padding: 5px;
     display: flex;
     max-width: 1300px;
@@ -46,14 +46,14 @@ body{
 
 }
 
-.nav-link{
+.nav-link {
     color: #ffffff;
     text-decoration: none;
-    
+
 }
 
-.logo{
-    font-size:30px;
+.logo {
+    font-size: 30px;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
     position: relative;
@@ -61,16 +61,16 @@ body{
     padding: 0 40px;
     line-height: 80px;
 
-    
+
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     margin-right: 40px;
     list-style: none;
 }
 
-.nav-menu-item{
+.nav-menu-item {
     font-size: 18px;
     margin: 0 10px;
     line-height: 80px;
@@ -78,23 +78,22 @@ body{
     width: max-content;
 }
 
-.nav-menu-link{
+.nav-menu-link {
     padding: 8px 12px;
     border-radius: 3px;
 }
 
-.nav-menu-link:hover{
+.nav-menu-link:hover {
     background-color: #565454;
     transition: 0.5s;
 }
+
 /* cierre de estilos nav*/
 
 /* Inicio estilos GunnerCat*/
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-
-
 
 
 .cards {
@@ -104,7 +103,7 @@ body{
     justify-content: center;
     -webkit-justify-content: center;
     max-width: 1200px;
-    margin-top: 90px;  
+    margin-top: 90px;
     overflow: hidden;
 }
 
@@ -127,28 +126,28 @@ body{
 }
 
 .card__img {
-  visibility: hidden;
+    visibility: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: 235px;
-  border-top-left-radius: 12px;
-border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 
-  
+
 }
 
 .card__info-hover {
-  position: absolute;
-  padding: 16px;
-  width: 100%;
-  opacity: 0;
-  top: 0;
+    position: absolute;
+    padding: 16px;
+    width: 100%;
+    opacity: 0;
+    top: 0;
 }
 
 .card__img--hover {
-  transition: 0.2s all ease-out;
+    transition: 0.2s all ease-out;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -158,31 +157,33 @@ border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     top: 0;
-  
-}
-.card {
-  margin-right: 25px;
-  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-  background-color: #fff;
-  width: 33.3%;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
-  margin: 15px;
 
 }
+
+.card {
+    margin-right: 25px;
+    transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+    background-color: #fff;
+    width: 33.3%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+
+}
+
 .card:hover {
-  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-  transform: scale(1.10, 1.10);
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.10, 1.10);
 }
 
 .card__info {
-  z-index: 2;
-  background-color: #fff;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  padding: 16px 24px 24px 24px;
+    z-index: 2;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
 }
 
 .card__category {
@@ -190,7 +191,7 @@ border-top-right-radius: 12px;
     font-size: 11px;
     letter-spacing: 2px;
     font-weight: 500;
-  color: #868686;
+    color: #868686;
 }
 
 .card__title {
@@ -225,7 +226,7 @@ border-top-right-radius: 12px;
     opacity: 1;
 }
 
-.btn{
+.btn {
     border-radius: 6px;
     padding: auto;
     margin-left: 6px;
@@ -233,5 +234,5 @@ border-top-right-radius: 12px;
     background-color: antiquewhite;
     text-align: center;
     cursor: pointer;
-    
+
 }

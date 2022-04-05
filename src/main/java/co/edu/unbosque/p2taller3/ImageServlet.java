@@ -28,7 +28,7 @@ public class ImageServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
 
-        switch (action){
+        switch (action) {
             case "add":
                 saveAuthor(req, resp);
                 break;
@@ -36,32 +36,32 @@ public class ImageServlet extends HttpServlet {
     }
 
     private void saveAuthor(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        try{
+        try {
 
             String title = req.getParameter("title");
-            String fcoins  = req.getParameter("fcoins");
+            String fcoins = req.getParameter("fcoins");
             Part part = req.getPart("file");
             String partConverted = part.toString();
 
-            if(part == null){
+            if (part == null) {
                 System.out.println("No ha seleccionado un archivo");
                 return;
             }
 
-            if(isExtension(part.getSubmittedFileName(), extens)){
+            if (isExtension(part.getSubmittedFileName(), extens)) {
                 String photo = saveFile(part, uploads);
                 NFT nft = new NFT(title, fcoins, partConverted);
                 //funcion agregar nft
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         res.sendRedirect("createNFT.html");
     }
 
 
-    private String saveFile(Part part, File pathUploads){
+    private String saveFile(Part part, File pathUploads) {
         String pathAbs = "";
 
         try {
@@ -70,22 +70,22 @@ public class ImageServlet extends HttpServlet {
             String fileName = path.getFileName().toString();
             InputStream input = part.getInputStream();
 
-            if(input != null){
+            if (input != null) {
                 File file = new File(pathUploads, fileName);
                 pathAbs = file.getAbsolutePath();
-                Files.copy(input,file.toPath());
+                Files.copy(input, file.toPath());
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         return pathAbs;
     }
 
-    private boolean isExtension(String fileName, String[] extensions){
-        for(String et : extensions){
-            if(fileName.toLowerCase().endsWith(et)){
+    private boolean isExtension(String fileName, String[] extensions) {
+        for (String et : extensions) {
+            if (fileName.toLowerCase().endsWith(et)) {
                 return true;
             }
         }

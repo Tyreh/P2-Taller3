@@ -17,34 +17,34 @@ import java.util.List;
 import java.util.Optional;
 
 public class NftService {
-    public Optional<List<NFT>> readNftCsv(){
-        try{
+    public Optional<List<NFT>> readNftCsv() {
+        try {
             List<NFT> nftList = new ArrayList<>();
 
             Reader reader = Files.newBufferedReader(Paths.get(ClassLoader.getSystemResource("nft.csv").toURI()));
             CSVReader csvReader = new CSVReader(reader);
 
             String[] line;
-            while((line = csvReader.readNext()) != null){
+            while ((line = csvReader.readNext()) != null) {
                 String title = line[0];
                 String fCoins = line[1];
                 String imgPath = line[2];
 
-                NFT nft = new NFT(title,fCoins,imgPath);
+                NFT nft = new NFT(title, fCoins, imgPath);
                 nftList.add(nft);
             }
             reader.close();
             csvReader.close();
             return Optional.of(nftList);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return Optional.empty();
         }
     }
 
-    public void writeNftCsv(String[] data) throws URISyntaxException{
+    public void writeNftCsv(String[] data) throws URISyntaxException {
         File file = new File(String.valueOf(Paths.get(ClassLoader.getSystemResource("nft.csv").toURI())));
-        try{
+        try {
             FileWriter outputFile = new FileWriter(file, true);
             CSVWriter writer = new CSVWriter(outputFile);
             writer.writeNext(data);

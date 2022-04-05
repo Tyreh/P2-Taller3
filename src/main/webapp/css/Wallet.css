@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /*shapes the body of the window*/
 body {
     font-family: 'Roboto';
@@ -22,33 +23,38 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 /*form to titles*/
-h1{
+h1 {
     text-align: center;
     font-weight: 700;
 }
+
 /*shapes the panel where the buttons and text are*/
-form{
+form {
     background: #fff;
     padding: 40px 0;
     box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     margin-top: 160px;
-    
+
 }
+
 /*shapes the panel where the buttons and text are*/
-.form{
+.form {
     width: 100%;
     margin: auto;
-    
+
 }
+
 /*gives margin and size to the form*/
-form .grupo{
+form .grupo {
     position: relative;
-    margin: 45px ;
+    margin: 45px;
 }
+
 /*shape text boxes*/
-input{
+input {
     background: none;
     color: #c6c6c6;
     font-size: 18px;
@@ -58,13 +64,15 @@ input{
     border: none;
     border-bottom: 1px solid var(--colorTextos);
 }
+
 /*remove margins from text boxes*/
-input:focus{ 
+input:focus {
     outline: none;
     color: #5e5d5d;
 }
+
 /*Create the animations to the text boxes*/
-label{
+label {
     color: var(--colorTextos);
     font-size: 16px;
     position: absolute;
@@ -73,21 +81,24 @@ label{
     transition: 0.5s ease all;
     pointer-events: none;
 }
+
 /*Gives characteristics to text boxes*/
-input:focus~label,
-input:valid~label{
+input:focus ~ label,
+input:valid ~ label {
     top: -14px;
     font-size: 12px;
     color: #2148f3;
 }
+
 /*Gives characteristics to the bars*/
-.barra{
+.barra {
     position: relative;
     display: block;
     width: 100%;
 }
+
 /*Gives characteristics to the bars*/
-.barra::before{
+.barra::before {
     content: "";
     height: 2px;
     width: 0%;
@@ -97,13 +108,14 @@ input:valid~label{
     transition: 0.3s ease width;
     left: 0;
 }
+
 /*Gives characteristics to the bars*/
-input:focus~.barra::before{
+input:focus ~ .barra::before {
     width: 100%;
 }
 
 /*Gives all the features to the buttons*/
-button{
+button {
     font-family: 'roboto';
     background: #222228;
     background: -webkit-linear-gradient(to right, #5e5d5d, #212183);
@@ -117,11 +129,11 @@ button{
     font-size: 16px;
     cursor: pointer;
     border-radius: 20px;
-    
+
 }
 
 /*shapes the icons*/
-.favicon{
+.favicon {
     margin-top: 10px;
     height: 50px;
     width: 50px;
@@ -130,7 +142,7 @@ button{
 }
 
 /*style the entire header*/
-.header{
+.header {
     background-color: #1c1c1f;
     height: 80px;
     position: fixed;
@@ -141,46 +153,49 @@ button{
 }
 
 /*styles the entire nav*/
-.nav{
+.nav {
     padding: 5px;
     display: flex;
     max-width: 1300px;
     justify-content: space-between;
     margin: 0 auto;
 }
+
 /*create animations for the nav*/
-.nav-link{
+.nav-link {
     color: #ffffff;
     text-decoration: none;
 }
+
 /*create styles for the logo text*/
-.logo{
+.logo {
     font-size: 30px;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
     padding: 0 40px;
     line-height: 80px;
 }
+
 /*shapes the user logo*/
-.nav-avatar{
+.nav-avatar {
     margin-top: 10px;
     height: 30px;
     width: 30px;
     position: relative;
-        left: 820px;
-        top: 10px;
+    left: 820px;
+    top: 10px;
 }
 
 /*Style the navigation bar*/
-.nav-menu{
+.nav-menu {
     display: flex;
     margin-right: 40px;
     list-style: none;
-    
+
 }
 
 /*Style the navigation bar*/
-.nav-menu-item{
+.nav-menu-item {
     font-size: 18px;
     margin: 0 10px;
     line-height: 80px;
@@ -189,20 +204,20 @@ button{
 }
 
 /*Style the navigation bar*/
-.nav-menu-link{
+.nav-menu-link {
     padding: 8px 12px;
     border-radius: 3px;
 }
 
 /*Style the navigation bar*/
-.nav-menu-link:hover{
+.nav-menu-link:hover {
     background-color: #565454;
     transition: 0.5s;
 }
 
 /*modifies the size of the page depending on the device*/
-@media screen and (max-width:500px){
-    form{
+@media screen and (max-width: 500px) {
+    form {
         width: 80%;
     }
 }
