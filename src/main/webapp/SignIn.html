@@ -25,18 +25,18 @@
         </nav>
 </header>
 <!-- Form for get the register information-->
-<form class="formulario">
+<form class="formulario"  action="./Users" method="post">
     <h1>Registrarse</h1>
     <div class="contenedor ">
         <!-- div with the name input information -->
         <div class="input-contenedor">
             <i class="fa-solid fa-user-astronaut"></i>
-            <input type="text" placeholder="Nombre Completo" required="">
+            <input type="text" name="name" placeholder="Nombre Completo" required>
         </div>
         <!-- div with the password input information -->
         <div class="input-contenedor">
             <i class="fa-solid fa-key"></i>
-            <input type="password" placeholder="Contraseña" required="">
+            <input type="password" name="password" placeholder="Contraseña" required>
         </div>
         <!-- div with the email input information -->
         <!--<div class="input-contenedor">
@@ -45,13 +45,13 @@
         </div>-->
         <div class="rol1">
             <select required>
-                <option value="1">Artista</option>
-                <option value="2">Comprador</option>
+                <option value="Artista" name="role">Artista</option>
+                <option value="Comprador" name="role">Comprador</option>
             </select>
         </div>
 
         <!-- button connected to IniciarSesion.html page -->
-        <a href="IniciarSesion.html"> <input type="button" value="Registrate" class="button"></a>
+        <a href="#"><input type="submit" value="Registrate" class="button"></a>
         <!-- button connected to IniciarSesion.html page -->
         <p>Si te registras estarías aceptando nuestras condiciones de uso y politica de privacidad </p>
         <p>¿Ya tienes cuenta? <a class="link" href="IniciarSesion.html">Iniciar Sesion</a></p>
