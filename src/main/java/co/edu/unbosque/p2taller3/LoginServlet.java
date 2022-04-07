@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.List;
 
 import co.edu.unbosque.p2taller3.dtos.User;
-import co.edu.unbosque.p2taller3.services.UserService;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -20,7 +19,7 @@ public class LoginServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
-        String username = request.getParameter("username");
+        String username = request.getParameter("name");
         String password = request.getParameter("password");
         String role = request.getParameter("role");
         List<User> userList = new UserService().readUserCsv().get();
