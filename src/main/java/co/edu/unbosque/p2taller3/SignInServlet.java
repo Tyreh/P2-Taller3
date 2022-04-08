@@ -1,6 +1,5 @@
 package co.edu.unbosque.p2taller3;
 
-import co.edu.unbosque.p2taller3.dtos.User;
 import co.edu.unbosque.p2taller3.services.UService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -14,7 +13,7 @@ import java.io.IOException;
 
 
 @WebServlet(name = "Usuarios", value = "/Users")
-public class SingInServlet extends HttpServlet {
+public class SignInServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

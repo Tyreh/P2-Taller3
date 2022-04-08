@@ -19,23 +19,16 @@ public class WalletServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-//        String coins = req.getParameter("coins");
-//
-//        try {
-//            var users = getUsers().get();
-//            var user = new User(logInServlet.getUsername(), logInServlet.getPassword(), logInServlet.getRole());
-//            users.remove(user);
-//
-//            System.out.println(getServletContext().getRealPath("") + File.separator);
-//            for (var userInList : users) {
-//                new UService().createUser(userInList, getServletContext().getRealPath("") + File.separator, true);
-//            }
-//
-//            user.setCoins(String.valueOf(Integer.parseInt(user.getCoins()) + Integer.parseInt(coins)));
-//            new UService().createUser(user, getServletContext().getRealPath("") + File.separator, true);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+        String coins = req.getParameter("coins");
+
+        try {
+            var users = getUsers().get();
+            users.removeIf(user -> user.getUsername().equals(logInServlet.getUsername()));
+            System.out.println(getServletContext().getRealPath("") + File.separator);
+
+            new UService().createUser(logInServlet.getUsername(), logInServlet.getPassword(), logInServlet.getRole(), getServletContext().getRealPath("") + File.separator);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
