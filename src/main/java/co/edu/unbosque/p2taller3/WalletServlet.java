@@ -1,6 +1,7 @@
 package co.edu.unbosque.p2taller3;
 
 import co.edu.unbosque.p2taller3.dtos.User;
+
 import static co.edu.unbosque.p2taller3.services.UService.*;
 
 import co.edu.unbosque.p2taller3.services.UService;
@@ -27,20 +28,25 @@ public class WalletServlet extends HttpServlet {
             List<User> users = getUsers().get();
             User userFound = null;
 
-            int index = 0;
             for (var user : users) {
                 if (user.getUsername().equals(username)) {
                     userFound = user;
-                    index = users.indexOf(user);
+                    users.remove(userFound);
                     break;
                 }
             }
 
             System.out.println(getServletContext().getRealPath("") + File.separator);
             if (userFound != null) {
+                new UService().createUser(getServletContext().getRealPath("") + File.separator, false);
+
+                for (var user : users) {
+                    new UService().createUser(user.getUsername(), user.getPassword(), user.getRole(), user.getCoins(), getServletContext().getRealPath("") + File.separator, true);
+                }
+
                 var currentCoins = Integer.parseInt(userFound.getCoins());
                 var newCoins = String.valueOf((Integer.parseInt(coins) + currentCoins));
-                new UService().createUser(userFound.getUsername(), userFound.getPassword(), userFound.getRole(), newCoins);
+                new UService().createUser(userFound.getUsername(), userFound.getPassword(), userFound.getRole(), newCoins, getServletContext().getRealPath("") + File.separator, true);
             }
         } catch (Exception e) {
             e.printStackTrace();

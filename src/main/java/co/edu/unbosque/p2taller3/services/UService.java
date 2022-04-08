@@ -41,11 +41,29 @@ public class UService {
         os.close();
     }
 
-    public void createUser(String username, String password, String role, String coins, String path) throws IOException {
+    public void createUser(String username, String password, String role, String coins, String path, boolean append) throws IOException {
         String newLine = username + "," + password + "," + role + "," + coins + "\n";
 
         System.out.println(path + File.separator + "Data" + File.separator + "users.csv" + "Create");
-        FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", true);
+        FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", append);
+        os.write(newLine.getBytes());
+        os.close();
+    }
+
+    public void createUser(String username, String password, String role, String path, boolean append) throws IOException {
+        String newLine = username + "," + password + "," + role + "," + "0" + "\n";
+
+        System.out.println(path + File.separator + "Data" + File.separator + "users.csv" + "Create");
+        FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", append);
+        os.write(newLine.getBytes());
+        os.close();
+    }
+
+    public void createUser(String path, boolean append) throws IOException {
+        String newLine = "username,password,role,coins\n";
+
+        System.out.println(path + File.separator + "Data" + File.separator + "users.csv" + "Create");
+        FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", append);
         os.write(newLine.getBytes());
         os.close();
     }
