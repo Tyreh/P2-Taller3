@@ -36,7 +36,6 @@
                 <a href="#" class="nav-menu-link nav-link">trueeh</a>
             </li>
             <li class="nav-menu-item ">
-
                 <a href="#" class="nav-menu-link nav-link"><%= request.getAttribute("coins")%> </a>
             </li>
         </ul>
