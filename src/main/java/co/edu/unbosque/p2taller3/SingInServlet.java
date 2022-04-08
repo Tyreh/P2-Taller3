@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 
+
 @WebServlet(name = "Usuarios", value = "/Users")
 public class SingInServlet extends HttpServlet {
 
@@ -17,16 +18,9 @@ public class SingInServlet extends HttpServlet {
     @Override
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //System.out.println("hola :d");
         String Nombre = req.getParameter("name");
         String Password = req.getParameter("password");
         String Role = req.getParameter("role");
-        //String dataServlet[] = {Nombre,Password,Role};
-        //try {
-       //     service.createUser(dataServlet);
-      //  } catch (URISyntaxException e) {
-      //      e.printStackTrace();
-      //  }
 
         try {
             System.out.println(getServletContext().getRealPath("") + File.separator);
@@ -35,10 +29,10 @@ public class SingInServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        if(Role.equals("a")){
+        if(Role.equals("artista")){
             resp.sendRedirect("./indexLOG.html");
         }
-        else if (Role.equals("b")){
+        else if (Role.equals("comprador")){
             resp.sendRedirect("./indexComprador.html");
         }
     }

@@ -1,43 +1,58 @@
 package co.edu.unbosque.p2taller3.services;
 
 import co.edu.unbosque.p2taller3.dtos.NFT;
-import com.opencsv.bean.*;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+import jakarta.servlet.http.Part;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Reader;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class NftService {
+    public Optional<List<NFT>> readNftCsv() {
+        try {
+            List<NFT> nftList = new ArrayList<>();
 
-    public List<NFT> getUsers() throws IOException {
+            Reader reader = Files.newBufferedReader(Paths.get(ClassLoader.getSystemResource("nft.csv").toURI()));
+            CSVReader csvReader = new CSVReader(reader);
 
-        List<NFT> users;
+            String[] line;
+            while ((line = csvReader.readNext()) != null) {
+                String title = line[0];
+                String author = line[1];
+                String fCoins = line[2];
+                String imgPath = line[3];
 
-        try (InputStream is = NftService.class.getClassLoader()
-                .getResourceAsStream("nft.csv")) {
-
-            HeaderColumnNameMappingStrategy<NFT> strategy = new HeaderColumnNameMappingStrategy<>();
-            strategy.setType(NFT.class);
-
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
-
-                CsvToBean<NFT> csvToBean = new CsvToBeanBuilder<NFT>(br)
-                        .withType(NFT.class)
-                        .withMappingStrategy(strategy)
-                        .withIgnoreLeadingWhiteSpace(true)
-                        .build();
-
-                users = csvToBean.parse();
+                NFT nft = new NFT(title, author, fCoins, imgPath);
+                nftList.add(nft);
             }
+            reader.close();
+            csvReader.close();
+            return Optional.of(nftList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Optional.empty();
         }
-
-        return users;
     }
 
-    public void createUser(String title, String author, String fcoins, String path) throws IOException {
-        String newLine = "\n" + title + "," + author + "," +fcoins+ "," +path;
-        FileOutputStream os = new FileOutputStream("nft.csv", true);
-        os.write(newLine.getBytes());
-        os.close();
+    public void writeNftCsv(String[] data) throws URISyntaxException {
+        File file = new File(String.valueOf(Paths.get(ClassLoader.getSystemResource("nft.csv").toURI())));
+        try {
+            FileWriter outputFile = new FileWriter(file, true);
+            CSVWriter writer = new CSVWriter(outputFile);
+            writer.writeNext(data);
+            System.out.println(Paths.get(ClassLoader.getSystemResource("nft.csv").toURI()));
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
