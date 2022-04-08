@@ -2,6 +2,7 @@ package co.edu.unbosque.p2taller3.services;
 
 import co.edu.unbosque.p2taller3.dtos.User;
 import com.opencsv.bean.*;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -18,9 +19,6 @@ public class UService {
         System.out.printf(ruta);
         try (InputStream is = new FileInputStream(ruta)) {
 
-            if (is == null) {
-                return Optional.empty();
-            }
             HeaderColumnNameMappingStrategy<User> strategy = new HeaderColumnNameMappingStrategy<>();
             strategy.setType(User.class);
 
@@ -36,10 +34,10 @@ public class UService {
         return Optional.of(users);
     }
 
-    public void createUser(String username, String password,String role , String path) throws IOException {
-        String newLine =  username + "," + password + "," + role + "\n";
+    public void createUser(String username, String password, String role, String path) throws IOException {
+        String newLine = username + "," + password + "," + role + "," + 0.0 + "\n";
 
-        System.out.println(path + File.separator + "Data" + File.separator + "users.csv" +  "Create");
+        System.out.println(path + File.separator + "Data" + File.separator + "users.csv" + "Create");
         FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", true);
         os.write(newLine.getBytes());
         os.close();
@@ -48,9 +46,9 @@ public class UService {
     public static void main(String args[]) {
 
         try {
-            Optional<List<User>> users = new UService().getUsers();
+            Optional<List<User>> users = getUsers();
 
-            for (User user: users.get()) {
+            for (User user : users.get()) {
                 System.out.println(user.toString());
             }
 

@@ -1,13 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <!-- Declaration of language and apis to be used in html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/indexLOG.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/f8537b25a5.js" crossorigin="anonymous"></script>
+
     <!-- Page title -->
     <title>ClosedSea</title>
 </head>
@@ -18,29 +19,34 @@
 <header class="header">
     <!--NavBar declaration and functions-->
     <nav class="nav">
-        <!-- Navbar logo --->
+        <!-- Navbar logo and avatar logo --->
         <img src="./Resources/closedsea%20favicon.png" class="favicon">
+        <img src="./Resources/UserAvatar.png" class="nav-avatar">
         <!-- Navbar text logo --->
         <a href="#" class="logo nav-link">ClosedSea</a>
         <!-- Navbar made with an ordered list and within that list an unordered list --->
         <ul class="nav-menu">
-            <!--<li class="nav-menu-item">
-                <a href="explore.html" class="nav-menu-link nav-link">Explore</a>
+            <li class="nav-menu-item ">
+                <a href="CrearColeccion.html" class="nav-menu-link nav-link">Create Colection</a>
             </li>
             <li class="nav-menu-item ">
-                <a href="SignIn.html" class="nav-menu-link nav-link">Collection</a>
+                <a href="CrearPieza.html" class="nav-menu-link nav-link">Create NFT</a>
             </li>
-            <li class="nav-menu-item ">
-                <a href="SignIn.html" class="nav-menu-link nav-link">Create</a>
-            </li>-->
             <li class="nav-menu-item nav-menu-login">
-                <a href="SignIn.html" class="nav-menu-link nav-link">Sign up / in</a>
+                <a href="#" class="nav-menu-link nav-link">trueeh</a>
+            </li>
+            <li class="nav-menu-item ">
+
+                <a href="#" class="nav-menu-link nav-link"><%= request.getAttribute("coins")%> </a>
             </li>
         </ul>
     </nav>
 </header>
 <!-- Nft main page and main div with information -->
+<div class="bg-img"></div>
+
 <div class="img-prom">
+    <br>
     <h1 class="h1-img-prom">Discover collect, and sell</h1>
     <h1 class="h1-img-prom">extraordinary NTFs</h1>
     <br>
@@ -49,15 +55,21 @@
     <br>
     <br>
     <a href="explore.html">
-        <button class="explore-btn"> Explore</button>
+        <button class="explore-btn"> Explore <i class="fa-solid fa-magnifying-glass"></i></button>
     </a>
-    <!--<a href="">
-         <button class="create-btn"> Create</button>
-     </a>-->
+
+    <a href="Wallet.html">
+        <button class="create-btn"> Wallet <i class="fa-brands fa-bitcoin"></i></button>
+    </a>
+    <br><br>
+    <a href="index.html">
+        <button class="logout-btn"> Log out <i class="fa-solid fa-door-open"></i></button>
+    </a>
 </div>
 <!-- Nft main page image -->
 <div class="img-body">
     <div class="image">
+
         <img src="./Resources/Nft1.png" alt="">
     </div>
     <div class="img-foot">

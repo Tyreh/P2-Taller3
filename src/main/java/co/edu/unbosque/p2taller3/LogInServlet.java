@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.List;
 
 import co.edu.unbosque.p2taller3.dtos.User;
+import static co.edu.unbosque.p2taller3.services.UService.*;
+
 import co.edu.unbosque.p2taller3.services.UService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -13,9 +15,8 @@ import jakarta.servlet.annotation.*;
 @WebServlet(name = "login", value = "/login")
 public class LogInServlet extends HttpServlet {
 
-    private UService uService;
-
-    public void init() {}
+    public void init() {
+    }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
@@ -24,16 +25,13 @@ public class LogInServlet extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
 
-        uService = new UService();
-        uService.setRuta(getServletContext().getRealPath("")+ File.separator + "Data"+File.separator+"users.csv");
+        UService uService = new UService();
+        uService.setRuta(getServletContext().getRealPath("") + File.separator + "Data" + File.separator + "users.csv");
 
-
-        List<User> users = new UService().getUsers().get();
-
-
+        List<User> users = getUsers().get();
 
         User userFounded = users.stream()
-                .filter(user -> username.equals(user.getUsername()) && password.equals(user.getPassword()) &&  role.equals(user.getRole()))
+                .filter(user -> username.equals(user.getUsername()) && password.equals(user.getPassword()) && role.equals(user.getRole()))
                 .findFirst()
                 .orElse(null);
 
@@ -45,11 +43,10 @@ public class LogInServlet extends HttpServlet {
             response.addCookie(cookie);
 
             //RequestDispatcher dispatcher = request.getRequestDispatcher("./home.jsp");
-            if(role.equals("artista")){
-                RequestDispatcher dispatcher = request.getRequestDispatcher("./indexLOG.html");
+            if (role.equals("artista")) {
+                RequestDispatcher dispatcher = request.getRequestDispatcher("./indexLOGtest.jsp");
                 dispatcher.forward(request, response);
-            }
-            else if (role.equals("comprador")){
+            } else if (role.equals("comprador")) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("./indexComprador.html");
                 dispatcher.forward(request, response);
             }
@@ -59,5 +56,6 @@ public class LogInServlet extends HttpServlet {
         }
     }
 
-    public void destroy() {}
+    public void destroy() {
+    }
 }

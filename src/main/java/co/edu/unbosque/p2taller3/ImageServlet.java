@@ -19,7 +19,8 @@ public class ImageServlet extends HttpServlet {
 
     private String UPLOAD_DIRECTORY = "uploads";
 
-    public void init() {}
+    public void init() {
+    }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String title = request.getParameter("title");
@@ -30,20 +31,23 @@ public class ImageServlet extends HttpServlet {
         String uploadPath = getServletContext().getRealPath("") + File.separator + UPLOAD_DIRECTORY;
         File uploadDir = new File(uploadPath);
 
-        new NftService().createUser(title,author,fcoins,pathAbs);
+        new NftService().createUser(title, author, fcoins, pathAbs);
 
-        if(!uploadDir.exists()){ uploadDir.mkdir();}
+        if (!uploadDir.exists()) {
+            uploadDir.mkdir();
+        }
 
-        try{
-            for(Part part : request.getParts()){
+        try {
+            for (Part part : request.getParts()) {
                 String fileName = part.getSubmittedFileName();
                 part.write(uploadPath + File.separator + fileName);
             }
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         response.sendRedirect("./indexLOG.html");
     }
 
-    public void destroy(){}
+    public void destroy() {
+    }
 }

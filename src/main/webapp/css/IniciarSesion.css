@@ -16,7 +16,7 @@ body {
 /**
 Logo image in the navbar
 */
-.favicon{
+.favicon {
     margin-top: 10px;
     height: 50px;
     width: 50px;
@@ -27,7 +27,7 @@ Logo image in the navbar
 /**
 Gives style to all header
 */
-.header{
+.header {
     background-color: #1c1c1f;
     height: 80px;
     position: fixed;
@@ -36,10 +36,11 @@ Gives style to all header
     left: 0;
     z-index: 100;
 }
+
 /**
 Gives style to all nav label
 */
-.nav{
+.nav {
     padding: 5px;
     display: flex;
     max-width: 1200px;
@@ -50,14 +51,15 @@ Gives style to all nav label
 /**
 Gives style to nav links
 */
-.nav-link{
+.nav-link {
     color: #ffffff;
     text-decoration: none;
 }
+
 /**
 Logo text next to the logo image
 */
-.logo{
+.logo {
     font-size: 30px;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
@@ -66,10 +68,11 @@ Logo text next to the logo image
     position: relative;
     left: -450px;
 }
+
 /**
 Navbar menu style
 */
-.nav-menu{
+.nav-menu {
     display: flex;
     margin-right: 40px;
     list-style: none;
@@ -78,7 +81,7 @@ Navbar menu style
 /**
 Gives style to all nav links
 */
-.nav-menu-link{
+.nav-menu-link {
     padding: 8px 12px;
     border-radius: 3px;
 }
@@ -86,7 +89,7 @@ Gives style to all nav links
 /**
 when the course passes next to a navbar element, it will light up.
 */
-.nav-menu-link:hover{
+.nav-menu-link:hover {
     background-color: #565454;
     transition: 0.5s;
 }
