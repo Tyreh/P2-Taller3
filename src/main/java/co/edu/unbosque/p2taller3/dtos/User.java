@@ -6,7 +6,14 @@ public class User {
     private String username;
     private String password;
     private String role;
-    private double coins;
+    private String coins;
+
+    public User(String username, String password, String role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.coins = "0";
+    }
 
     public String getUsername() {
         return username;
@@ -32,11 +39,11 @@ public class User {
         this.role = role;
     }
 
-    public double getCoins() {
+    public String getCoins() {
         return coins;
     }
 
-    public void setCoins(double coins) {
+    public void setCoins(String coins) {
         this.coins = coins;
     }
 

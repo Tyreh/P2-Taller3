@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <!-- Declaration of language and apis to be used in html -->
 <html lang="en">
@@ -32,10 +33,10 @@
                 <a href="CrearPieza.html" class="nav-menu-link nav-link">Create NFT</a>
             </li>
             <li class="nav-menu-item nav-menu-login">
-                <a href="#" class="nav-menu-link nav-link">trueeh</a>
+                <a href="#" class="nav-menu-link nav-link"><%= request.getAttribute("username")%>></a>
             </li>
             <li class="nav-menu-item ">
-                <a href="#" class="nav-menu-link nav-link">FCoins: </a>
+                <a href="#" class="nav-menu-link nav-link"><%= request.getAttribute("coins")%> </a>
             </li>
         </ul>
     </nav>

@@ -13,9 +13,7 @@ public class UService {
     static String ruta = "";
 
     public static Optional<List<User>> getUsers() throws IOException {
-
         List<User> users;
-
         System.out.printf(ruta);
         try (InputStream is = new FileInputStream(ruta)) {
 
@@ -34,13 +32,29 @@ public class UService {
         return Optional.of(users);
     }
 
-    public void createUser(String username, String password, String role, String path) throws IOException {
-        String newLine = username + "," + password + "," + role + "," + 0.0 + "\n";
+//    public void createUser(String username, String password, String role, String path) throws IOException {
+//        String newLine = username + "," + password + "," + role + "," + "0" + "\n";
+//
+//        System.out.println(path + File.separator + "Data" + File.separator + "users.csv" + "Create");
+//        FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", true);
+//        os.write(newLine.getBytes());
+//        os.close();
+//    }
+
+    public void createUser(User user, String path, boolean append) throws IOException {
+        String newLine = user.getUsername() + "," + user.getPassword() + "," + user.getRole() + "," + user.getCoins() + "\n";
 
         System.out.println(path + File.separator + "Data" + File.separator + "users.csv" + "Create");
-        FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", true);
+        FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", append);
         os.write(newLine.getBytes());
         os.close();
+    }
+
+
+    public User addCoins(User user, int newCoins) {
+        var currentCoins = Integer.parseInt(user.getCoins());
+        user.setCoins(String.valueOf((currentCoins + newCoins)));
+        return user;
     }
 
     public static void main(String args[]) {

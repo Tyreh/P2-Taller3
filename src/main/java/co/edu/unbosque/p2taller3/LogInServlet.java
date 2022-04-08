@@ -15,15 +15,19 @@ import jakarta.servlet.annotation.*;
 @WebServlet(name = "login", value = "/login")
 public class LogInServlet extends HttpServlet {
 
+    private String username;
+    private String password;
+    private String role;
+
     public void init() {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
 
-        String username = request.getParameter("name");
-        String password = request.getParameter("password");
-        String role = request.getParameter("role");
+        username = request.getParameter("name");
+        password = request.getParameter("password");
+        role = request.getParameter("role");
 
         UService uService = new UService();
         uService.setRuta(getServletContext().getRealPath("") + File.separator + "Data" + File.separator + "users.csv");
@@ -43,15 +47,13 @@ public class LogInServlet extends HttpServlet {
             cookie.setMaxAge(20);
             response.addCookie(cookie);
 
-            //RequestDispatcher dispatcher = request.getRequestDispatcher("./home.jsp");
             if (role.equals("artista")) {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("./indexLOGtest.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("./indexLOG.jsp");
                 dispatcher.forward(request, response);
             } else if (role.equals("comprador")) {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("./indexComprador.html");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("./indexComprador.jsp");
                 dispatcher.forward(request, response);
             }
-
         } else {
             response.sendRedirect("./401.html");
         }
@@ -59,4 +61,17 @@ public class LogInServlet extends HttpServlet {
 
     public void destroy() {
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
 }
