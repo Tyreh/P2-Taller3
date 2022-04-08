@@ -41,10 +41,6 @@ public class LogInServlet extends HttpServlet {
             request.setAttribute("coins", userFounded.getCoins());
             request.setAttribute("username", userFounded.getUsername());
 
-            Cookie cookie = new Cookie("role", userFounded.getRole());
-            cookie.setMaxAge(20);
-            response.addCookie(cookie);
-
             if (role.equals("artista")) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("./indexLOG.jsp");
                 dispatcher.forward(request, response);

@@ -59,30 +59,6 @@ public class UService {
         os.close();
     }
 
-    public void createUser(String path, boolean append) throws IOException {
-        String newLine = "username,password,role,coins\n";
-
-        System.out.println(path + File.separator + "Data" + File.separator + "users.csv" + "Create");
-        FileOutputStream os = new FileOutputStream(path + "Data" + File.separator + "users.csv", append);
-        os.write(newLine.getBytes());
-        os.close();
-    }
-
-    public static void main(String args[]) {
-
-        try {
-            Optional<List<User>> users = getUsers();
-
-            for (User user : users.get()) {
-                System.out.println(user.toString());
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
     public String getRuta() {
         return ruta;
     }

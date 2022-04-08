@@ -17,8 +17,6 @@ import java.io.IOException;
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 public class ImageServlet extends HttpServlet {
 
-    private String UPLOAD_DIRECTORY = "uploads";
-
     public void init() {
     }
 
@@ -28,20 +26,24 @@ public class ImageServlet extends HttpServlet {
         String fcoins = request.getParameter("fcoins");
         String pathAbs = getServletContext().getRealPath("") + File.separator;
 
+        String UPLOAD_DIRECTORY = "uploads";
         String uploadPath = getServletContext().getRealPath("") + File.separator + UPLOAD_DIRECTORY;
         File uploadDir = new File(uploadPath);
 
-        new NftService().createUser(title, author, fcoins, pathAbs);
 
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
 
+        NftService nftService = new NftService();
+
         try {
+            String fileName = null;
             for (Part part : request.getParts()) {
-                String fileName = part.getSubmittedFileName();
+                fileName = nftService.generateRandomWords(8) + part.getSubmittedFileName();
                 part.write(uploadPath + File.separator + fileName);
             }
+            new NftService().createNft(title, author, fcoins, pathAbs, fileName);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

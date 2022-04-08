@@ -38,6 +38,10 @@
         <h1>Wallet</h1>
         <!-- Owners name input -->
         <div class="grupo">
+            <input type="text" name="username" required><span class="barra"></span>
+            <label>Nombre de usuario</label>
+        </div>
+        <div class="grupo">
             <input type="text" name="" required><span class="barra"></span>
             <label>Nombre del titular</label>
         </div>
@@ -48,26 +52,20 @@
         </div>
         <!-- Expiration date input -->
         <div class="grupo">
-            <input type="date" name="" id="date" required><span class="barra"></span>
+            <input type="date" required><span class="barra"></span>
         </div>
         <!-- CVV input -->
         <div class="grupo">
-            <input type="text" name="" required><span class="barra"></span>
+            <input type="text" required><span class="barra"></span>
             <label>Código de la tarjeta (CVV)</label>
         </div>
         <!-- Cantidad input -->
         <div class="grupo">
-            <input type="text" name="coins" id="name" required><span class="barra"></span>
+            <input type="text" name="coins" required><span class="barra"></span>
             <label>Cantidad a recargar</label>
         </div>
         <!-- Pay button -->
-        <a href="indexLOG.jsp">
             <button type="button">Pagar</button>
-        </a>
-        <!-- Cancel button -->
-        <a href="indexLOG.jsp">
-            <button type="button">Cancelar Pago</button>
-        </a>
     </div>
 </form>
 </body>
