@@ -25,11 +25,12 @@ public class ImageServlet extends HttpServlet {
         String title = request.getParameter("title");
         String author = request.getParameter("author");
         String fcoins = request.getParameter("fcoins");
+        String pathAbs = getServletContext().getRealPath("") + File.separator;
 
         String uploadPath = getServletContext().getRealPath("") + File.separator + UPLOAD_DIRECTORY;
         File uploadDir = new File(uploadPath);
 
-        new NftService().createUser(title,author,fcoins,uploadPath);
+        new NftService().createUser(title,author,fcoins,pathAbs);
 
         if(!uploadDir.exists()){ uploadDir.mkdir();}
 
