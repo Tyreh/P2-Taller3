@@ -15,19 +15,15 @@ import jakarta.servlet.annotation.*;
 @WebServlet(name = "login", value = "/login")
 public class LogInServlet extends HttpServlet {
 
-    private String username;
-    private String password;
-    private String role;
-
     public void init() {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
 
-        username = request.getParameter("name");
-        password = request.getParameter("password");
-        role = request.getParameter("role");
+       String username = request.getParameter("name");
+       String password = request.getParameter("password");
+       String role = request.getParameter("role");
 
         UService uService = new UService();
         uService.setRuta(getServletContext().getRealPath("") + File.separator + "Data" + File.separator + "users.csv");
@@ -42,6 +38,7 @@ public class LogInServlet extends HttpServlet {
         if (userFounded != null) {
             request.setAttribute("role", userFounded.getRole());
             request.setAttribute("coins", userFounded.getCoins());
+            request.setAttribute("username", userFounded.getUsername());
 
             Cookie cookie = new Cookie("role", userFounded.getRole());
             cookie.setMaxAge(20);
@@ -58,20 +55,4 @@ public class LogInServlet extends HttpServlet {
             response.sendRedirect("./401.html");
         }
     }
-
-    public void destroy() {
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
 }

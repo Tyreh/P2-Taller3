@@ -2,6 +2,7 @@ package co.edu.unbosque.p2taller3;
 
 import co.edu.unbosque.p2taller3.dtos.User;
 import co.edu.unbosque.p2taller3.services.UService;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ import java.io.IOException;
 public class SingInServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String nombre = req.getParameter("name");
         String password = req.getParameter("password");
         String role = req.getParameter("role");
@@ -28,10 +29,18 @@ public class SingInServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+        req.setAttribute("username", nombre);
+        req.setAttribute("coins", "0");
+
+
         if (role.equals("artista")) {
-            resp.sendRedirect("./indexLOG.jsp");
+            //resp.sendRedirect("./indexLOG.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("./indexLOG.jsp");
+            dispatcher.forward(req, resp);
         } else if (role.equals("comprador")) {
-            resp.sendRedirect("./indexComprador.jsp");
+            //resp.sendRedirect("./indexComprador.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("./indexComprador.jsp");
+            dispatcher.forward(req, resp);
         }
     }
 }
