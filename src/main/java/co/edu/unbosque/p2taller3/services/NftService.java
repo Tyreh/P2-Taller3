@@ -36,7 +36,7 @@ public class NftService {
 
     public void createUser(String title, String author, String fcoins, String path) throws IOException {
         String newLine = "\n" + title + "," + author + "," +fcoins+ "," +path;
-        FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/" + "nft.csv", true);
+        FileOutputStream os = new FileOutputStream("nft.csv", true);
         os.write(newLine.getBytes());
         os.close();
     }

@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-@WebServlet(name = "uploadNft", value = "/upload-nft")
+@WebServlet(name = "uploadNft", value = "/upload-test")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 public class ImageServlet extends HttpServlet {
 
