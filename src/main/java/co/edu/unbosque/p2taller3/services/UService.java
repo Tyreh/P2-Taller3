@@ -12,7 +12,7 @@ public class UService {
 
         List<User> users;
 
-        try (InputStream is = UserService.class.getClassLoader()
+        try (InputStream is = UService.class.getClassLoader()
                 .getResourceAsStream("users.csv")) {
 
             HeaderColumnNameMappingStrategy<User> strategy = new HeaderColumnNameMappingStrategy<>();
