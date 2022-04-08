@@ -23,8 +23,7 @@ public class SingInServlet extends HttpServlet {
 
         try {
             System.out.println(getServletContext().getRealPath("") + File.separator);
-            User user = new User(nombre, password, role);
-            new UService().createUser(user, getServletContext().getRealPath("") + File.separator, true);
+            new UService().createUser(nombre, password, role, getServletContext().getRealPath("") + File.separator);
         } catch (Exception e) {
             e.printStackTrace();
         }
