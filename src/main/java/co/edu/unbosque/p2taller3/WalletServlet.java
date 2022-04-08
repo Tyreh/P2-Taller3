@@ -1,6 +1,8 @@
 package co.edu.unbosque.p2taller3;
 
 import co.edu.unbosque.p2taller3.dtos.User;
+import static co.edu.unbosque.p2taller3.services.UService.*;
+
 import co.edu.unbosque.p2taller3.services.UService;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,22 +13,35 @@ import static co.edu.unbosque.p2taller3.services.UService.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "Wallet", value = "/Wallet")
 public class WalletServlet extends HttpServlet {
 
-    private final LogInServlet logInServlet = new LogInServlet();
-
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+        String username = req.getParameter("username");
         String coins = req.getParameter("coins");
 
         try {
-            var users = getUsers().get();
-            users.removeIf(user -> user.getUsername().equals(logInServlet.getUsername()));
-            System.out.println(getServletContext().getRealPath("") + File.separator);
+            List<User> users = getUsers().get();
+            User userFound = null;
 
-            new UService().createUser(logInServlet.getUsername(), logInServlet.getPassword(), logInServlet.getRole(), getServletContext().getRealPath("") + File.separator);
+            int index = 0;
+            for (var user : users) {
+                if (user.getUsername().equals(username)) {
+                    userFound = user;
+                    index = users.indexOf(user);
+                    break;
+                }
+            }
+
+            System.out.println(getServletContext().getRealPath("") + File.separator);
+            if (userFound != null) {
+                var currentCoins = Integer.parseInt(userFound.getCoins());
+                var newCoins = String.valueOf((Integer.parseInt(coins) + currentCoins));
+                new UService().createUser(userFound.getUsername(), userFound.getPassword(), userFound.getRole(), newCoins);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

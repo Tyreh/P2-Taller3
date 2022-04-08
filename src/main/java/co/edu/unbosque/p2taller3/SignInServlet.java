@@ -31,7 +31,6 @@ public class SignInServlet extends HttpServlet {
         req.setAttribute("username", nombre);
         req.setAttribute("coins", "0");
 
-
         if (role.equals("artista")) {
             //resp.sendRedirect("./indexLOG.jsp");
             RequestDispatcher dispatcher = req.getRequestDispatcher("./indexLOG.jsp");
