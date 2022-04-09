@@ -21,7 +21,7 @@ import java.util.List;
 public class WalletServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String username = req.getParameter("username");
         String coins = req.getParameter("coins");
 
@@ -64,5 +64,6 @@ public class WalletServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        resp.sendRedirect("./indexLOG.html");
     }
 }
