@@ -64,6 +64,5 @@ public class WalletServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        resp.sendRedirect("./indexLOG.html");
     }
 }
