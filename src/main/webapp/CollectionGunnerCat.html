@@ -14,7 +14,7 @@
     <nav class="nav">
 
         <img src="./Resources/closedsea%20favicon.png" class="favicon">
-        <a href="indexLOG.html" class="logo nav-link">ClosedSea</a>
+        <a href="indexLOG.jsp" class="logo nav-link">ClosedSea</a>
 
         <ul class="nav-menu">
             <li class="nav-menu-item">
@@ -37,6 +37,7 @@
 </header>
 
 <!--section where the charts are created and displayed within the collections-->
+<form action="">
 <section class="cards">
 
     <!--Card 1-->
@@ -53,7 +54,13 @@
         <div class="card__img"></div>
         <!--Option to link to the letter-->
         <a href="#" class="card_link">
-            <div class="card__img--hover"></div>
+            <div class="card__img--hover">
+                <style>
+                    .card--1 .card__img, .card--1 .card__img--hover {
+                        background-image: url(Nfts/Cat1.png);
+                    }
+                </style>
+            </div>
         </a>
         <!--charter information-->
         <div class="card__info">
@@ -109,6 +116,7 @@
         </div>
     </article>
 </section>
+</form>
 
 </body>
 </html>
