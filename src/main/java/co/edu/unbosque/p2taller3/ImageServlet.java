@@ -26,10 +26,8 @@ public class ImageServlet extends HttpServlet {
         String fcoins = request.getParameter("fcoins");
         String pathAbs = getServletContext().getRealPath("") + File.separator;
 
-        String UPLOAD_DIRECTORY = "uploads";
-        String uploadPath = getServletContext().getRealPath("") + File.separator + UPLOAD_DIRECTORY;
+        String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
         File uploadDir = new File(uploadPath);
-
 
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
@@ -38,8 +36,11 @@ public class ImageServlet extends HttpServlet {
         NftService nftService = new NftService();
 
         try {
-            String fileName = null;
+            String fileName = "";
             for (Part part : request.getParts()) {
+                if (part.getSubmittedFileName() == null) {
+                    continue;
+                }
                 fileName = nftService.generateRandomWords(8) + part.getSubmittedFileName();
                 part.write(uploadPath + File.separator + fileName);
             }
@@ -47,7 +48,7 @@ public class ImageServlet extends HttpServlet {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        response.sendRedirect("./indexLOG.html");
+        response.sendRedirect("./indexLOG.jsp");
     }
 
     public void destroy() {
