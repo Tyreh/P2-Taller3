@@ -17,9 +17,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type Wallet servlet.
+ */
 @WebServlet(name = "Wallet", value = "/Wallet")
 public class WalletServlet extends HttpServlet {
-
+    /**
+     * Takes the data a form and puts it into a jsp.
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String username = req.getParameter("username");

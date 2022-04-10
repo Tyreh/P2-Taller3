@@ -2,6 +2,9 @@ package co.edu.unbosque.p2taller3.dtos;
 
 import java.util.Objects;
 
+/**
+ * The type Nft.
+ */
 public class NFT {
 
     private String title;
@@ -9,6 +12,14 @@ public class NFT {
     private String FCoins;
     private String imagePath;
 
+    /**
+     * Instantiates a new Nft.
+     *
+     * @param title     the title
+     * @param author    the author
+     * @param FCoins    the f coins
+     * @param imagePath the image path
+     */
     public NFT(String title, String author, String FCoins, String imagePath) {
         this.title = title;
         this.FCoins = FCoins;
@@ -16,26 +27,56 @@ public class NFT {
         this.author = author;
     }
 
+    /**
+     * Gets author.
+     *
+     * @return the author
+     */
     public String getAuthor() {
         return author;
     }
 
+    /**
+     * Sets author.
+     *
+     * @param author the author
+     */
     public void setAuthor(String author) {
         this.author = author;
     }
 
+    /**
+     * Gets title.
+     *
+     * @return the title
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Gets f coins.
+     *
+     * @return the f coins
+     */
     public String getFCoins() {
         return FCoins;
     }
 
+    /**
+     * Sets title.
+     *
+     * @param title the title
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /**
+     * Sets f coins.
+     *
+     * @param FCoins the f coins
+     */
     public void setFCoins(String FCoins) {
         this.FCoins = FCoins;
     }
@@ -49,16 +90,4 @@ public class NFT {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        NFT nft = (NFT) o;
-        return Objects.equals(title, nft.title) && Objects.equals(FCoins, nft.FCoins) && Objects.equals(imagePath, nft.imagePath);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(title, FCoins, imagePath);
-    }
 }

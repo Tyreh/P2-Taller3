@@ -8,8 +8,17 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * The type Nft service.
+ */
 public class NftService {
 
+    /**
+     * Gets nfts.
+     *
+     * @return the nfts
+     * @throws IOException the io exception
+     */
     public List<NFT> getNfts() throws IOException {
 
         List<NFT> nfts;
@@ -35,6 +44,12 @@ public class NftService {
         return nfts;
     }
 
+    /**
+     * Generate random words string.
+     *
+     * @param numberOfWords the number of words
+     * @return the string
+     */
     public String generateRandomWords(int numberOfWords) {
         StringBuilder randomStrings = new StringBuilder();
         Random random = new Random();
@@ -48,6 +63,16 @@ public class NftService {
         return randomStrings.toString();
     }
 
+    /**
+     * Create nft.
+     *
+     * @param title     the title
+     * @param author    the author
+     * @param coins     the coins
+     * @param path      the path
+     * @param imagePath the image path
+     * @throws IOException the io exception
+     */
     public void createNft(String title, String author, String coins, String path, String imagePath) throws IOException {
         String newLine = "\n" + title + "," + author + "," + coins + "," + imagePath;
 

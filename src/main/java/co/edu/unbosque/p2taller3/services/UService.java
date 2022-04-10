@@ -8,10 +8,22 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The type U service.
+ */
 public class UService {
 
+    /**
+     * The Ruta.
+     */
     static String ruta = "";
 
+    /**
+     * Gets users.
+     *
+     * @return the users
+     * @throws IOException the io exception
+     */
     public static Optional<List<User>> getUsers() throws IOException {
         List<User> users;
         System.out.printf(ruta);
@@ -32,6 +44,15 @@ public class UService {
         return Optional.of(users);
     }
 
+    /**
+     * Create user.
+     *
+     * @param username the username
+     * @param password the password
+     * @param role     the role
+     * @param path     the path
+     * @throws IOException the io exception
+     */
     public void createUser(String username, String password, String role, String path) throws IOException {
         String newLine = username + "," + password + "," + role + "," + "0" + "\n";
 
@@ -41,6 +62,17 @@ public class UService {
         os.close();
     }
 
+    /**
+     * Create user.
+     *
+     * @param username the username
+     * @param password the password
+     * @param role     the role
+     * @param coins    the coins
+     * @param path     the path
+     * @param append   the append
+     * @throws IOException the io exception
+     */
     public void createUser(String username, String password, String role, String coins, String path, boolean append) throws IOException {
         String newLine = username + "," + password + "," + role + "," + coins + "\n";
 
@@ -50,6 +82,16 @@ public class UService {
         os.close();
     }
 
+    /**
+     * Create user.
+     *
+     * @param username the username
+     * @param password the password
+     * @param role     the role
+     * @param path     the path
+     * @param append   the append
+     * @throws IOException the io exception
+     */
     public void createUser(String username, String password, String role, String path, boolean append) throws IOException {
         String newLine = username + "," + password + "," + role + "," + "0" + "\n";
 
@@ -59,10 +101,20 @@ public class UService {
         os.close();
     }
 
+    /**
+     * Gets ruta.
+     *
+     * @return the ruta
+     */
     public String getRuta() {
         return ruta;
     }
 
+    /**
+     * Sets ruta.
+     *
+     * @param ruta the ruta
+     */
     public void setRuta(String ruta) {
         this.ruta = ruta;
     }

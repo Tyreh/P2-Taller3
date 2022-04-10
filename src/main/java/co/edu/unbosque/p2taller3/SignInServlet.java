@@ -12,9 +12,14 @@ import java.io.File;
 import java.io.IOException;
 
 
+/**
+ * The type Sign in servlet.
+ */
 @WebServlet(name = "Usuarios", value = "/Users")
 public class SignInServlet extends HttpServlet {
-
+    /**
+     * Takes the data a form and puts it into a jsp.
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String nombre = req.getParameter("name");

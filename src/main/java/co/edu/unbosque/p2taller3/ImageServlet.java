@@ -13,13 +13,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * The type Image servlet.
+ */
 @WebServlet(name = "uploadNft", value = "/upload-test")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 public class ImageServlet extends HttpServlet {
 
     public void init() {
     }
-
+/**
+ * Takes the data a form and puts it into a jsp.
+ */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String title = request.getParameter("title");
         String author = request.getParameter("author");

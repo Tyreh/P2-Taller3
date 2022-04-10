@@ -13,12 +13,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
+/**
+ * The type Log in servlet.
+ */
 @WebServlet(name = "login", value = "/login")
 public class LogInServlet extends HttpServlet {
 
     public void init() {
     }
-
+    /**
+     * Takes the data a form and puts it into a jsp.
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
 
